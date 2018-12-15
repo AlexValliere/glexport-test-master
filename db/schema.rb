@@ -10,48 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_202257) do
+# ActiveRecord::Schema.define(version: 2018_12_14_202257) do
+ActiveRecord::Schema.define(version: 2016_01_13_203742) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_by"
-    t.datetime "updated_at", null: false
-    t.datetime "created_at", null: false
-  end
+#   create_table "companies", force: :cascade do |t|
+#     t.string "name"
+#     t.datetime "created_by"
+#     t.datetime "updated_at", null: false
+#     t.datetime "created_at", null: false
+#   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "sku"
-    t.string "description"
-    t.integer "company_id"
-    t.datetime "created_by"
-    t.datetime "updated_at", null: false
-    t.datetime "created_at", null: false
-  end
+#   create_table "products", force: :cascade do |t|
+#     t.string "sku"
+#     t.string "description"
+#     t.integer "company_id"
+#     t.datetime "created_by"
+#     t.datetime "updated_at", null: false
+#     t.datetime "created_at", null: false
+#   end
 
-  create_table "shipment_products", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "shipment_id"
-    t.integer "quantity"
-    t.datetime "created_by"
-    t.datetime "updated_at", null: false
-    t.datetime "created_at", null: false
-    t.index ["product_id"], name: "index_shipment_products_on_product_id"
-    t.index ["shipment_id"], name: "index_shipment_products_on_shipment_id"
-  end
+#   create_table "shipment_products", force: :cascade do |t|
+#     t.bigint "product_id"
+#     t.bigint "shipment_id"
+#     t.integer "quantity"
+#     t.datetime "created_by"
+#     t.datetime "updated_at", null: false
+#     t.datetime "created_at", null: false
+#     t.index ["product_id"], name: "index_shipment_products_on_product_id"
+#     t.index ["shipment_id"], name: "index_shipment_products_on_shipment_id"
+#   end
 
-  create_table "shipments", force: :cascade do |t|
-    t.string "name"
-    t.integer "company_id"
-    t.string "international_transportation_mode"
-    t.date "international_departure_date"
-    t.datetime "created_by"
-    t.datetime "updated_at", null: false
-    t.datetime "created_at", null: false
-  end
+#   create_table "shipments", force: :cascade do |t|
+#     t.string "name"
+#     t.integer "company_id"
+#     t.string "international_transportation_mode"
+#     t.date "international_departure_date"
+#     t.datetime "created_by"
+#     t.datetime "updated_at", null: false
+#     t.datetime "created_at", null: false
+#   end
 
-  add_foreign_key "shipment_products", "products"
-  add_foreign_key "shipment_products", "shipments"
-end
+#   add_foreign_key "shipment_products", "products"
+#   add_foreign_key "shipment_products", "shipments"
+# end
