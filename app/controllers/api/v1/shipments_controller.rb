@@ -4,10 +4,11 @@ module Api
 
 
       def index
+        
         if (params[:company_id].blank?)
-          @shipments = Shipment.all.includes(:shipment_products)
+          render json: {'errors' => ["company_id is required"] }, status: 422
         else
-          @shipments = Shipment.where(:company_id => params[:company_id]).includes(:shipment_products)
+          @shipments = Shipment.where(:company_id => params[:company_id]).includes(:shipment_products).limit(4)
         end
 
         if (params[:sort].present?)
