@@ -56,4 +56,4 @@ ActiveRecord::Schema.define(version: 2016_01_13_203742) do
 
 #   add_foreign_key "shipment_products", "products"
 #   add_foreign_key "shipment_products", "shipments"
-# end
+end
